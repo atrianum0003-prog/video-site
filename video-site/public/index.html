@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MyVideoSite — Watch Videos</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="dot"></span>MyVideoSite</a>
+    <div class="search">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input id="searchInput" type="text" placeholder="Search videos..." />
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="cats" id="categories">
+    <button class="cat active" data-cat="All">All</button>
+    <button class="cat" data-cat="Music">Music</button>
+    <button class="cat" data-cat="Gaming">Gaming</button>
+    <button class="cat" data-cat="Vlog">Vlog</button>
+    <button class="cat" data-cat="Education">Education</button>
+    <button class="cat" data-cat="Sports">Sports</button>
+    <button class="cat" data-cat="Other">Other</button>
+  </div>
+
+  <div class="grid" id="videoGrid"></div>
+</main>
+
+<footer>© <span id="year"></span> MyVideoSite</footer>
+
+<div class="modal" id="playerModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closePlayer" aria-label="Close">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="player" id="playerContainer"></div>
+    <div class="modal-info">
+      <h2 id="playerTitle"></h2>
+      <div class="modal-meta" id="playerMeta"></div>
+      <p id="playerDesc" style="color:#ddd; font-size:14px;"></p>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

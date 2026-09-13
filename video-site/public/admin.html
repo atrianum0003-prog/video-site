@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel — MyVideoSite</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="dot"></span>MyVideoSite</a>
+    <span class="badge">ADMIN</span>
+  </div>
+</header>
+
+<div class="form-wrap" id="loginView">
+  <h1>Admin Login</h1>
+  <form id="loginForm">
+    <label for="password">Admin Password</label>
+    <input type="password" id="password" required placeholder="••••••••" />
+    <button type="submit">Log In</button>
+    <div class="error" id="loginError"></div>
+  </form>
+</div>
+
+<div class="container" id="adminView" hidden>
+  <div class="form-wrap" style="margin-top: 20px;">
+    <h1>Upload a Video</h1>
+    <div class="hint">📹 Supported: MP4, WebM, MOV — max 100 MB per upload.</div>
+
+    <form id="uploadForm">
+      <label for="title">Title *</label>
+      <input type="text" id="title" required placeholder="My awesome video" />
+
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Tell viewers about this video..."></textarea>
+
+      <label for="category">Category</label>
+      <select id="category">
+        <option>Music</option>
+        <option>Gaming</option>
+        <option>Vlog</option>
+        <option>Education</option>
+        <option>Sports</option>
+        <option>Other</option>
+      </select>
+
+      <label for="duration">Duration (e.g., 12:34)</label>
+      <input type="text" id="duration" placeholder="12:34" />
+
+      <label for="video">Video File *</label>
+      <input type="file" id="video" accept="video/*" required />
+
+      <label for="thumbnail">Thumbnail (optional image)</label>
+      <input type="file" id="thumbnail" accept="image/*" />
+
+      <button type="submit" id="uploadBtn">Upload Video</button>
+      <div class="progress-bar" id="progressBar" hidden><div></div></div>
+      <div class="error" id="uploadError"></div>
+      <div class="success" id="uploadSuccess"></div>
+    </form>
+  </div>
+
+  <div class="admin-list">
+    <h2 style="margin-bottom: 16px;">Your Videos</h2>
+    <div id="adminVideoList"></div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
